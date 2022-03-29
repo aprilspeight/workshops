@@ -1,4 +1,4 @@
-- title: "Grambling (Babylon.js)"
+- title: "Babylon.js (Grambling)"
   url: "docs/Grambling"
   children:
     - title: Overview
@@ -13,7 +13,7 @@
       url: "docs/Grambling/4-load-models"
     - title: Add Character
       url: "docs/Grambling/5-add-character"
-- title: "Southern (Babylon.js)"
+- title: "Babylon.js (Southern)"
   url: "docs/Southern"
   children:
     - title: Overview
@@ -28,5 +28,3 @@
       url: "docs/Southern/4-load-models"
     - title: Add Character
       url: "docs/Southern/5-add-character"
-- title: "Change Log"
-  url: "news"
