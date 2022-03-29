@@ -114,6 +114,21 @@ The code below loads the Southern University flag. Add this snippet after the co
     });
 ```
 
+## Jaguar
+
+The code below loads the jaguar. Add this snippet after the code for the **Southern University Flag**.
+
+    /***** Jaguar *****/   
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/scv2zprv0onod5w/", "jaguar.glb", scene).then((result) => {
+        var jaguar = result.meshes[0];
+        jaguar.scaling = new BABYLON.Vector3(1.08, 1.08, 1.08);
+        jaguar.rotate(BABYLON.Axis.Y, BABYLON.Tools.ToRadians(45))
+        jaguar.position = new BABYLON.Vector3(2, 0, -.08);
+
+                
+        scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
+    });
+
 ## Complete Code
 
 Provided below is the complete code for this step of the workshop.
@@ -218,6 +233,17 @@ var createScene = function () {
         southernFlagWhite.scaling = new BABYLON.Vector3(1.08, 1.08, 1.08);
         southernFlagWhite.rotate(BABYLON.Axis.Y, BABYLON.Tools.ToRadians(-45))
         southernFlagWhite.position = new BABYLON.Vector3(1, 0, -.08);
+
+                
+        scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
+    });
+
+    /***** Jaguar *****/   
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/scv2zprv0onod5w/", "jaguar.glb", scene).then((result) => {
+        var jaguar = result.meshes[0];
+        jaguar.scaling = new BABYLON.Vector3(1.08, 1.08, 1.08);
+        jaguar.rotate(BABYLON.Axis.Y, BABYLON.Tools.ToRadians(45))
+        jaguar.position = new BABYLON.Vector3(2, 0, -.08);
 
                 
         scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
