@@ -1,5 +1,5 @@
 ---
-title: Add Character
+title: Add Character (Guy)
 ---
 
 # Add Character
@@ -33,31 +33,28 @@ The code below enables keyboard input. Add this snippet after the code for the *
 
 ## Import Character
 
-The code below imports the 3D model for the character. Add this snippet after the code for the **Keyboard Events**.
+The code below imports the 3D model for the **Elizabeth** character. Add this snippet after the code for the **Keyboard Events**.
 
 ```javascript
     /**** Animated Character *****/
-    BABYLON.SceneLoader.ImportMesh("", "https://aprilspeight.github.io/workshop-babylonjs/", "david.glb", scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
-        var hero = newMeshes[0];
-
-        //Scale the model down        
-        hero.scaling.scaleInPlace(1);
+    BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/ycwztvffb1u0lg1/", "elizabeth.glb", scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
+        var character = newMeshes[0];
 
         // Position the model
-        hero.position.z = -4;
+        character.position.z = -4;
 
         //Lock camera on the character 
-        camera.target = hero;
+        camera.target = character;
 
-        //Hero character variables 
-        var heroSpeed = 0.05;
-        var heroSpeedBackwards = 0.01;
-        var heroRotationSpeed = 0.02;
+        //Character variables 
+        var characterSpeed = 0.05;
+        var characterSpeedBackwards = 0.01;
+        var characterRotationSpeed = 0.02;
 
         var animating = true;
 
         const walkAnim = scene.getAnimationGroupByName("Walking");
-        const walkBackAnim = scene.getAnimationGroupByName("WalkingBackwards");
+        const walkBackAnim = scene.getAnimationGroupByName("Backwards");
         const idleAnim = scene.getAnimationGroupByName("Idle");
         const danceAnim = scene.getAnimationGroupByName("Dance");
     })
@@ -68,24 +65,24 @@ The code below imports the 3D model for the character. Add this snippet after th
 The code below adds the animations for the character. Add this snippet before the final `})`.
 
 ```javascript
-        //Rendering loop (executed for every frame)
+        //Rendering loop (executed for everyframe)
         scene.onBeforeRenderObservable.add(() => {
             var keydown = false;
             //Manage the movements of the character (e.g. position, direction)
             if (inputMap["w"]) {
-                hero.moveWithCollisions(hero.forward.scaleInPlace(heroSpeed));
+                character.moveWithCollisions(character.forward.scaleInPlace(characterSpeed));
                 keydown = true;
             }
             if (inputMap["s"]) {
-                hero.moveWithCollisions(hero.forward.scaleInPlace(-heroSpeedBackwards));
+                character.moveWithCollisions(character.forward.scaleInPlace(-characterSpeedBackwards));
                 keydown = true;
             }
             if (inputMap["a"]) {
-                hero.rotate(BABYLON.Vector3.Up(), -heroRotationSpeed);
+                character.rotate(BABYLON.Vector3.Up(), -characterRotationSpeed);
                 keydown = true;
             }
             if (inputMap["d"]) {
-                hero.rotate(BABYLON.Vector3.Up(), heroRotationSpeed);
+                character.rotate(BABYLON.Vector3.Up(), characterRotationSpeed);
                 keydown = true;
             }
             if (inputMap["b"]) {
@@ -250,27 +247,24 @@ var createScene = function () {
     }));
 
     /**** Animated Character *****/
-    BABYLON.SceneLoader.ImportMesh("", "https://aprilspeight.github.io/workshop-babylonjs/", "david.glb", scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
-        var hero = newMeshes[0];
-
-        //Scale the model down        
-        hero.scaling.scaleInPlace(1);
+    BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/ycwztvffb1u0lg1/", "elizabeth.glb", scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
+        var character = newMeshes[0];
 
         // Position the model
-        hero.position.z = -4;
+        character.position.z = -4;
 
         //Lock camera on the character 
-        camera.target = hero;
+        camera.target = character;
 
-        //Hero character variables 
-        var heroSpeed = 0.05;
-        var heroSpeedBackwards = 0.01;
-        var heroRotationSpeed = 0.02;
+        //Character variables 
+        var characterSpeed = 0.05;
+        var characterSpeedBackwards = 0.01;
+        var characterRotationSpeed = 0.02;
 
         var animating = true;
 
         const walkAnim = scene.getAnimationGroupByName("Walking");
-        const walkBackAnim = scene.getAnimationGroupByName("WalkingBackwards");
+        const walkBackAnim = scene.getAnimationGroupByName("Backwards");
         const idleAnim = scene.getAnimationGroupByName("Idle");
         const danceAnim = scene.getAnimationGroupByName("Dance");
 
@@ -279,19 +273,19 @@ var createScene = function () {
             var keydown = false;
             //Manage the movements of the character (e.g. position, direction)
             if (inputMap["w"]) {
-                hero.moveWithCollisions(hero.forward.scaleInPlace(heroSpeed));
+                character.moveWithCollisions(character.forward.scaleInPlace(characterSpeed));
                 keydown = true;
             }
             if (inputMap["s"]) {
-                hero.moveWithCollisions(hero.forward.scaleInPlace(-heroSpeedBackwards));
+                character.moveWithCollisions(character.forward.scaleInPlace(-characterSpeedBackwards));
                 keydown = true;
             }
             if (inputMap["a"]) {
-                hero.rotate(BABYLON.Vector3.Up(), -heroRotationSpeed);
+                character.rotate(BABYLON.Vector3.Up(), -characterRotationSpeed);
                 keydown = true;
             }
             if (inputMap["d"]) {
-                hero.rotate(BABYLON.Vector3.Up(), heroRotationSpeed);
+                character.rotate(BABYLON.Vector3.Up(), characterRotationSpeed);
                 keydown = true;
             }
             if (inputMap["b"]) {

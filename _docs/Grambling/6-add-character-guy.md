@@ -1,5 +1,5 @@
 ---
-title: Add Character
+title: Add Character (Guy)
 ---
 
 # Add Character
@@ -13,7 +13,7 @@ For this workshop, we'll use an animated character from <a href="https://www.mix
 
 Once an animated character is loaded, the animations are mapped to keyboard inputs so that you can control the character using your **WASD** and **B** keys.
 
-Use the code snippets below to add the animated character to the landmark scene.
+Use the code snippets below to add the **David** animated character to the landmark scene.
 
 ## Keyboard Events
 
@@ -37,22 +37,21 @@ The code below imports the 3D model for the character. Add this snippet after th
 
 ```javascript
     /**** Animated Character *****/
-    BABYLON.SceneLoader.ImportMesh("", "https://aprilspeight.github.io/workshop-babylonjs/", "david.glb", scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
-        var hero = newMeshes[0];
-
-        //Scale the model down        
-        hero.scaling.scaleInPlace(1);
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/iaobee8k8f0zqqd/", "david.glb", scene).then((result) => {
+        var character = result.meshes[0];
 
         // Position the model
-        hero.position.z = -2;
+        character.position.z = -2;
+        character.position.y = .1;
+
 
         //Lock camera on the character 
-        camera.target = hero;
+        camera.target = character;
 
-        //Hero character variables 
-        var heroSpeed = 0.008;
-        var heroSpeedBackwards = 0.01;
-        var heroRotationSpeed = 0.02;
+        //Character variables 
+        var characterSpeed = 0.008;
+        var characterSpeedBackwards = 0.01;
+        var characterRotationSpeed = 0.02;
 
         var animating = true;
 
@@ -73,19 +72,19 @@ The code below adds the animations for the character. Add this snippet before th
             var keydown = false;
             //Manage the movements of the character (e.g. position, direction)
             if (inputMap["w"]) {
-                hero.moveWithCollisions(hero.forward.scaleInPlace(heroSpeed));
+                character.moveWithCollisions(character.forward.scaleInPlace(characterSpeed));
                 keydown = true;
             }
             if (inputMap["s"]) {
-                hero.moveWithCollisions(hero.forward.scaleInPlace(-heroSpeedBackwards));
+                character.moveWithCollisions(character.forward.scaleInPlace(-characterSpeedBackwards));
                 keydown = true;
             }
             if (inputMap["a"]) {
-                hero.rotate(BABYLON.Vector3.Up(), -heroRotationSpeed);
+                character.rotate(BABYLON.Vector3.Up(), -characterRotationSpeed);
                 keydown = true;
             }
             if (inputMap["d"]) {
-                hero.rotate(BABYLON.Vector3.Up(), heroRotationSpeed);
+                character.rotate(BABYLON.Vector3.Up(), characterRotationSpeed);
                 keydown = true;
             }
             if (inputMap["b"]) {
@@ -194,7 +193,7 @@ var createScene = function () {
     mulch.material = mulchMat;
 
     /***** Grambling State University Structure *****/
-    const grambling = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/rth0162rw5yiszx/", "grambling.glb", scene, function (newMeshes) {
+    const grambling = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/kxs2k36f8im6yvf/", "grambling.glb", scene, function (newMeshes) {
         var grambling = newMeshes[0];
         grambling.scaling.scaleInPlace(.35);
         grambling.rotate(BABYLON.Axis.Y, BABYLON.Tools.ToRadians(180));
@@ -299,22 +298,21 @@ var createScene = function () {
     }));
 
     /**** Animated Character *****/
-    BABYLON.SceneLoader.ImportMesh("", "https://aprilspeight.github.io/workshop-babylonjs/", "david.glb", scene, function (newMeshes, particleSystems, skeletons, animationGroups) {
-        var hero = newMeshes[0];
-
-        //Scale the model down        
-        hero.scaling.scaleInPlace(1);
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/iaobee8k8f0zqqd/", "david.glb", scene).then((result) => {
+        var character = result.meshes[0];
 
         // Position the model
-        hero.position.z = -2;
+        character.position.z = -2;
+        character.position.y = .1;
+
 
         //Lock camera on the character 
-        camera.target = hero;
+        camera.target = character;
 
-        //Hero character variables 
-        var heroSpeed = 0.008;
-        var heroSpeedBackwards = 0.01;
-        var heroRotationSpeed = 0.02;
+        //Character variables 
+        var characterSpeed = 0.008;
+        var characterSpeedBackwards = 0.01;
+        var characterRotationSpeed = 0.02;
 
         var animating = true;
 
@@ -328,19 +326,19 @@ var createScene = function () {
             var keydown = false;
             //Manage the movements of the character (e.g. position, direction)
             if (inputMap["w"]) {
-                hero.moveWithCollisions(hero.forward.scaleInPlace(heroSpeed));
+                character.moveWithCollisions(character.forward.scaleInPlace(characterSpeed));
                 keydown = true;
             }
             if (inputMap["s"]) {
-                hero.moveWithCollisions(hero.forward.scaleInPlace(-heroSpeedBackwards));
+                character.moveWithCollisions(character.forward.scaleInPlace(-characterSpeedBackwards));
                 keydown = true;
             }
             if (inputMap["a"]) {
-                hero.rotate(BABYLON.Vector3.Up(), -heroRotationSpeed);
+                character.rotate(BABYLON.Vector3.Up(), -characterRotationSpeed);
                 keydown = true;
             }
             if (inputMap["d"]) {
-                hero.rotate(BABYLON.Vector3.Up(), heroRotationSpeed);
+                character.rotate(BABYLON.Vector3.Up(), characterRotationSpeed);
                 keydown = true;
             }
             if (inputMap["b"]) {

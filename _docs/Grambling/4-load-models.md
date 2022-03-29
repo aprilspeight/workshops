@@ -23,7 +23,7 @@ The code below loads the brick structure. Add this snippet after the code for th
 
 ```javascript
     /***** Grambling State University Structure *****/
-    const grambling = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/rth0162rw5yiszx/", "grambling.glb", scene, function (newMeshes) {
+    const grambling = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/kxs2k36f8im6yvf/", "grambling.glb", scene, function (newMeshes) {
         var grambling = newMeshes[0];
         grambling.scaling.scaleInPlace(.35);
         grambling.rotate(BABYLON.Axis.Y, BABYLON.Tools.ToRadians(180));
@@ -206,7 +206,7 @@ var createScene = function () {
     mulch.material = mulchMat;
 
     /***** Grambling State University Structure *****/
-    const grambling = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/rth0162rw5yiszx/", "grambling.glb", scene, function (newMeshes) {
+    const grambling = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/kxs2k36f8im6yvf/", "grambling.glb", scene, function (newMeshes) {
         var grambling = newMeshes[0];
         grambling.scaling.scaleInPlace(.35);
         grambling.rotate(BABYLON.Axis.Y, BABYLON.Tools.ToRadians(180));

@@ -11,8 +11,10 @@
       url: "docs/Grambling/3-add-materials-textures"
     - title: Load Models
       url: "docs/Grambling/4-load-models"
-    - title: Add Character
-      url: "docs/Grambling/5-add-character"
+    - title: Add Character (Girl)
+      url: "docs/Grambling/5-add-character-girl"
+    - title: Add Character (Guy)
+      url: "docs/Grambling/6-add-character-guy"
 - title: "Babylon.js (Southern)"
   url: "docs/Southern"
   children:
@@ -26,5 +28,7 @@
       url: "docs/Southern/3-add-materials-textures"
     - title: Load Models
       url: "docs/Southern/4-load-models"
-    - title: Add Character
-      url: "docs/Southern/5-add-character"
+    - title: Add Character (Girl)
+      url: "docs/Southern/5-add-character-girl"
+    - title: Add Character (Guy)
+      url: "docs/Southern/6-add-character-guy"
