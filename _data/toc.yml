@@ -2,27 +2,27 @@
   url: "docs/grambling"
   children:
     - title: Overview
-      url: "docs/grambling/index"
+      url: "docs/Grambling/index"
     - title: Create a Playground
-      url: "docs/grambling/2-create-a-scene"
+      url: "docs/Grambling/2-create-a-scene"
     - title: Add Materials & Textures
-      url: "docs/grambling/3-add-materials-textures"
+      url: "docs/Grambling/3-add-materials-textures"
     - title: Load Models
-      url: "docs/grambling/4-load-character"
+      url: "docs/Grambling/4-load-character"
     - title: Add Character
-      url: "docs/grambling/5-add-character"
+      url: "docs/Grambling/5-add-character"
 - title: "Southern (Babylon.js)"
   url: "docs/southern"
   children:
     - title: Overview
-      url: "docs/southern/index"
+      url: "docs/Southern/index"
     - title: Create a Playground
-      url: "docs/southern/2-create-a-scene"
+      url: "docs/Southern/2-create-a-scene"
     - title: Add Materials & Textures
-      url: "docs/southern/3-add-materials-textures"
+      url: "docs/Southern/3-add-materials-textures"
     - title: Load Models
-      url: "docs/southern/4-load-character"
+      url: "docs/Southern/4-load-character"
     - title: Add Character
-      url: "docs/southern/5-add-character"
+      url: "docs/Southern/5-add-character"
 - title: "Change Log"
   url: "news"
