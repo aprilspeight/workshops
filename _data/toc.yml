@@ -10,7 +10,7 @@
     - title: Add Materials & Textures
       url: "docs/Grambling/3-add-materials-textures"
     - title: Load Models
-      url: "docs/Grambling/4-load-character"
+      url: "docs/Grambling/4-load-models"
     - title: Add Character
       url: "docs/Grambling/5-add-character"
 - title: "Southern (Babylon.js)"
@@ -25,7 +25,7 @@
     - title: Add Materials & Textures
       url: "docs/Southern/3-add-materials-textures"
     - title: Load Models
-      url: "docs/Southern/4-load-character"
+      url: "docs/Southern/4-load-models"
     - title: Add Character
       url: "docs/Southern/5-add-character"
 - title: "Change Log"
