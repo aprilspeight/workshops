@@ -1,54 +1,93 @@
 ---
-title: Physics
+title: Add Materials and Textures
 ---
 
-# Physics
+# Add Materials and Textures
 
-## Objectives
+Materials give your meshes color and texture. One material in Babylon.js can be used to cover as many meshes as you wish. They can be displayed as a wire-frame, scaled and offset across a mesh, have degrees of transparency and be blended. You can apply multiple materials on one mesh and use a dynamic texture as a material that you can draw and write on in real time.
 
-- Explain the relationship between forces and pivots
-- Identify how force can be applied to an object
-- Predict the direction of movement whether a pivot point is provided
+Use the code snippets below to create a material and texture for the sky and ground within the scene.
 
-## Introduction
+## Code Snippets
 
-In XR, physics play an important role in making the experience as close to the real world as possible. Physics enables objects to be controlled and manipulated by approximating some of the forces in the real world, like gravity. Moreover, certain engines provide the opportunity to give objects values such as mass that allow further physical interactions between them and the environment.
+### Sky
 
-### Gravity
+The code below creates a skybox for the scene. Add this snippet after the code for the **light**.
 
-If you were to hold an object in the air and let go, you'd expect the object to fall thanks to gravity. Gravity is a force that attracts either a body or object toward the center of the earth, or toward any other physical body or object having mass. In XR, we can simulate the act of gravity by adding gravity to virtual objects. Each XR platform has it's own method to apply gravity to 3D objects and thus the method in doing so varies. While adding gravity to virtual objects is not a requirement, doing so does provide a sense of realism. Given that XR has the capability to blend the digital and physical world in such a way that provides a seamless experience, consider striving for adding gravity to objects wherever appropriate.
+```javascript
+    /***** This creates a sky box and material *****/
+    var skybox = BABYLON.Mesh.CreateBox("skyBox", 1000.0, scene);
 
-`<image>`
+```
 
-### Forces
+The code below creates a sky material. Add this snippet after the code for the **skybox**.
 
-Any interaction that modifies or changes the motion of an object is considered a **force**. When a force is applied to an object, it's movement, direction and/or speed are altered. Forces have their own magnitude and direction, which means they can be represented as vectors. Though vectors are mathematical concepts with their own operations and rules, we do not need to go in depth for a basic understanding and usage in XR development.
+```javascript
+    var skyboxMaterial = new BABYLON.SkyMaterial("skyMaterial", scene);
+    skyboxMaterial.backFaceCulling = false;
+    skybox.material = skyboxMaterial;
+    skyboxMaterial.azimuth = 0.25;
+    skyboxMaterial.useSunPosition = true; // Do not set sun position from azimuth and inclination
+    skyboxMaterial.sunPosition = new BABYLON.Vector3(0, 100, 0);
+    skyboxMaterial.inclination = 0.5;
+    skyboxMaterial.luminance = 1;
+```
 
-*[Image showing a force vector]*
-`<image>`
+### Ground Material & Texture
 
-Forces can be applied through environment changes, user's input, etc. As an example, applying force in the right direction to an object as the user presses a button, can move the object in that direction provided no other forces are currently acting on its body.
+The code below creates a material and texture for the ground. Add this snippet after the code for the **ground**.
 
-`<image>`
+```javascript
+    groundMat = new BABYLON.StandardMaterial("groundMat", scene);
+    groundMat.diffuseTexture = new BABYLON.Texture("textures/grass.jpg", scene);
+    groundMat.diffuseTexture.uScale = 5.0; //Repeat 5 times on the Vertical Axes
+    groundMat.diffuseTexture.vScale = 5.0; //Repeat 5 times on the Horizontal Axes
+    groundMat.backFaceCulling = false; //Always show the front and the back of an element
+    ground.material = groundMat;
+```
 
-### Pivots
+## Complete Code
 
-Nonetheless, certain movements (like rotations) require more than just force to occur. This is where the concept of a pivot comes to play. A **pivot** is a (usually central) point, on which an object oscillates or turns. In XR development, a pivot point is an element that is added to objects in order to mimic turning, rotation or oscillation when a force is applied.
+Provided below is the complete code for this step of the workshop.
 
-`<image>`
+```javascript
+var createScene = function () {
+    /**** This creates a basic Babylon Scene object *****/
+    var scene = new BABYLON.Scene(engine);
 
-Without a pivot point, any force added to an object will result in movement (provided the applied force is greater than any other existing force already acting on the object, like gravity) in the direction of the force. After adding a pivot point however, the application of force may result in turning or oscillation, depending again on the existing forces *and* the direction of the applied force.
+    /**** This creates a camera *****/
+    var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 10, new BABYLON.Vector3(0, 0, 0));
+    scene.activeCamera = camera;
+    scene.activeCamera.attachControl(canvas, true);
+    camera.lowerRadiusLimit = 2;
+    camera.upperRadiusLimit = 30;
+    camera.wheelDeltaPercentage = 0.01;
 
-`<image>`
+    /***** This creates a light *****/
+    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, -1), scene);
 
-## Quiz
+    // Sky mesh (box)
+    var skybox = BABYLON.Mesh.CreateBox("skyBox", 1000.0, scene);
 
-{% include quiz.html file='unit-2-physics' %}
+    var skyboxMaterial = new BABYLON.SkyMaterial("skyMaterial", scene);
+    skyboxMaterial.backFaceCulling = false;
+    skybox.material = skyboxMaterial;
+    skyboxMaterial.azimuth = 0.25;
+    skyboxMaterial.useSunPosition = true; // Do not set sun position from azimuth and inclination
+    skyboxMaterial.sunPosition = new BABYLON.Vector3(0, 100, 0);
+    skyboxMaterial.inclination = 0.5;
+    skyboxMaterial.luminance = 1;
 
-## Supplemental Reading
+    /***** This creates a ground *****/
+    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 20, height: 12}, scene);
 
-We've identified the following resources to provide additional context and learning for the content reviewed in this lesson. We encourage you to review the material below and explore additional related topics.
+    groundMat = new BABYLON.StandardMaterial("groundMat", scene);
+    groundMat.diffuseTexture = new BABYLON.Texture("textures/grass.jpg", scene);
+    groundMat.diffuseTexture.uScale = 5.0; //Repeat 5 times on the Vertical Axes
+    groundMat.diffuseTexture.vScale = 5.0; //Repeat 5 times on the Horizontal Axes
+    groundMat.backFaceCulling = false; //Always show the front and the back of an element
+    ground.material = groundMat;
 
-- TBD
-- TBD
-- TBD
+    return scene;
+};
+```
