@@ -2,7 +2,7 @@
   url: "docs/grambling"
   children:
     - title: Overview
-      url: "docs/grambling/0-introduction"
+      url: "docs/grambling/index"
     - title: Create a Playground
       url: "docs/grambling/2-create-a-scene"
     - title: Add Materials & Textures
@@ -15,7 +15,7 @@
   url: "docs/southern"
   children:
     - title: Overview
-      url: "docs/southern/0-introduction"
+      url: "docs/southern/index"
     - title: Create a Playground
       url: "docs/southern/2-create-a-scene"
     - title: Add Materials & Textures
