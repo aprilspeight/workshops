@@ -12,15 +12,15 @@ Use the code snippets below to create a material and texture for the sky and gro
 
 ### Sky
 
-The code below creates a skybox for the scene. Add this snippet after the code for the **light**.
+The code below creates a skybox for the scene. Add this snippet after the code for the **Light**.
 
 ```javascript
-    /***** This creates a sky box and material *****/
+    /***** Sky *****/
     var skybox = BABYLON.Mesh.CreateBox("skyBox", 1000.0, scene);
 
 ```
 
-The code below creates a sky material. Add this snippet after the code for the **skybox**.
+The code below creates a sky material. Add this snippet after the code for the **Sky**.
 
 ```javascript
     var skyboxMaterial = new BABYLON.SkyMaterial("skyMaterial", scene);
@@ -35,7 +35,7 @@ The code below creates a sky material. Add this snippet after the code for the *
 
 ### Ground Material & Texture
 
-The code below creates a material and texture for the ground. Add this snippet after the code for the **ground**.
+The code below creates a material and texture for the ground. Add this snippet after the code for the **Ground**.
 
 ```javascript
     groundMat = new BABYLON.StandardMaterial("groundMat", scene);
@@ -52,10 +52,10 @@ Provided below is the complete code for this step of the workshop.
 
 ```javascript
 var createScene = function () {
-    /**** This creates a basic Babylon Scene object *****/
+    /**** Create a Basic Babylon.js Scene *****/
     var scene = new BABYLON.Scene(engine);
 
-    /**** This creates a camera *****/
+    /**** Camera *****/
     var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 10, new BABYLON.Vector3(0, 0, 0));
     scene.activeCamera = camera;
     scene.activeCamera.attachControl(canvas, true);
@@ -63,10 +63,10 @@ var createScene = function () {
     camera.upperRadiusLimit = 30;
     camera.wheelDeltaPercentage = 0.01;
 
-    /***** This creates a light *****/
+    /***** Light *****/
     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, -1), scene);
 
-    // Sky mesh (box)
+    /***** Sky *****/
     var skybox = BABYLON.Mesh.CreateBox("skyBox", 1000.0, scene);
 
     var skyboxMaterial = new BABYLON.SkyMaterial("skyMaterial", scene);
@@ -78,7 +78,7 @@ var createScene = function () {
     skyboxMaterial.inclination = 0.5;
     skyboxMaterial.luminance = 1;
 
-    /***** This creates a ground *****/
+    /***** Ground *****/
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 20, height: 12}, scene);
 
     groundMat = new BABYLON.StandardMaterial("groundMat", scene);

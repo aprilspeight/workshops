@@ -6,10 +6,9 @@ title: Introduction
 
 For this workshop, you'll create a campus landmark using Babylon.js.
 
-## Completed Versions
+## Completed Version
 
-- Web:
-- VR:
+- Web: [https://playground.babylonjs.com/#DYRH55](https://playground.babylonjs.com/#DYRH55)
 
 ## Prerequisites
 
