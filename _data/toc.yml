@@ -4,7 +4,7 @@
     - title: Overview
       url: "docs/Grambling/0-introduction"
     - title: Create a Playground
-      url: "docs/Grambling/2-create-a-playground"
+      url: "docs/Grambling/1-create-a-playground"
     - title: Create a Scene
       url: "docs/Grambling/2-create-a-scene"
     - title: Add Materials & Textures
@@ -19,7 +19,7 @@
     - title: Overview
       url: "docs/Southern/0-introduction"
     - title: Create a Playground
-      url: "docs/Grambling/2-create-a-playground"
+      url: "docs/Southern/1-create-a-playground"
     - title: Create a Scene
       url: "docs/Southern/2-create-a-scene"
     - title: Add Materials & Textures
