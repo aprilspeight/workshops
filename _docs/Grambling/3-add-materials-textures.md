@@ -46,6 +46,37 @@ The code below creates a material and texture for the ground. Add this snippet a
     ground.material = groundMat;
 ```
 
+### Sidewalk Material & Texture
+
+The code below creates a mesh for the sidewalk. Add this snippet after the code for the **Ground**.
+
+```javascript
+    /***** Sidewalk *****/
+    const sidewalk = BABYLON.MeshBuilder.CreateBox("sidewalk", {height: .02, width: 6.5, depth: 6.5});
+    sidewalk.position.z = -2;
+    sidewalk.position.y = .05;
+    sidewalkMat = new BABYLON.StandardMaterial("groundMat");
+    sidewalkMat.diffuseColor = new BABYLON.Color3(0.95, 0.85, 0.76, 0.81);
+    sidewalk.material = sidewalkMat;
+```
+
+### Mulch Material & Texture
+
+The code below creates a mesh for the dirt within the sidewalk. Add this snippet after the code for the **Sidewalk**.
+
+```javascript
+    /***** Mulch *****/
+    const mulch = BABYLON.MeshBuilder.CreateBox("mulch", {height: .02, width: 4, depth: 2});
+    mulch.position.z = -3;
+    mulch.position.y = .08;
+    mulchMat = new BABYLON.StandardMaterial("mulchMat", scene);
+    mulchMat.diffuseTexture = new BABYLON.Texture("textures/rock.png", scene);
+    mulchMat.diffuseTexture.uScale = 5.0; //Repeat 5 times on the Vertical Axes
+    mulchMat.diffuseTexture.vScale = 5.0; //Repeat 5 times on the Horizontal Axes
+    mulchMat.backFaceCulling = false; //Always show the front and the back of an element
+    mulch.material = dirtMat;
+```
+
 ## Complete Code
 
 Provided below is the complete code for this step of the workshop.
@@ -65,6 +96,9 @@ var createScene = function () {
 
     /***** Light *****/
     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, -1), scene);
+
+    // An additional light is used to illuminate the Grambling State University sign
+    var light2 = new BABYLON.DirectionalLight("DirectionalLight", new BABYLON.Vector3(0, -5, 40), scene);
 
     /***** Sky *****/
     var skybox = BABYLON.Mesh.CreateBox("skyBox", 1000.0, scene);
@@ -87,6 +121,25 @@ var createScene = function () {
     groundMat.diffuseTexture.vScale = 5.0; //Repeat 5 times on the Horizontal Axes
     groundMat.backFaceCulling = false; //Always show the front and the back of an element
     ground.material = groundMat;
+
+    /***** Sidewalk *****/
+    const sidewalk = BABYLON.MeshBuilder.CreateBox("sidewalk", {height: .02, width: 6.5, depth: 6.5});
+    sidewalk.position.z = -2;
+    sidewalk.position.y = .05;
+    sidewalkMat = new BABYLON.StandardMaterial("groundMat");
+    sidewalkMat.diffuseColor = new BABYLON.Color3(0.95, 0.85, 0.76, 0.81);
+    sidewalk.material = sidewalkMat;
+
+    /***** Mulch *****/
+    const mulch = BABYLON.MeshBuilder.CreateBox("mulch", {height: .02, width: 4, depth: 2});
+    mulch.position.z = -3;
+    mulch.position.y = .08;
+    mulchMat = new BABYLON.StandardMaterial("mulchMat", scene);
+    mulchMat.diffuseTexture = new BABYLON.Texture("textures/rock.png", scene);
+    mulchMat.diffuseTexture.uScale = 5.0; //Repeat 5 times on the Vertical Axes
+    mulchMat.diffuseTexture.vScale = 5.0; //Repeat 5 times on the Horizontal Axes
+    mulchMat.backFaceCulling = false; //Always show the front and the back of an element
+    mulch.material = mulchMat;
 
     return scene;
 };

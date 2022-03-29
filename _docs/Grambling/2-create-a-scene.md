@@ -75,6 +75,9 @@ var createScene = function () {
     /***** Light *****/
     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, -1), scene);
 
+    // An additional light is used to illuminate the Grambling State University sign
+    var light2 = new BABYLON.DirectionalLight("DirectionalLight", new BABYLON.Vector3(0, -5, 40), scene);
+
     /***** Ground *****/
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 20, height: 12}, scene);
 
