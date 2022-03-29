@@ -178,7 +178,7 @@ var createScene = function () {
 
     /***** Ground *****/
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 20, height: 12}, scene);
-
+    
     groundMat = new BABYLON.StandardMaterial("groundMat", scene);
     groundMat.diffuseTexture = new BABYLON.Texture("textures/grass.jpg", scene);
     groundMat.diffuseTexture.uScale = 5.0; //Repeat 5 times on the Vertical Axes
@@ -234,6 +234,7 @@ var createScene = function () {
         scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
      });
 
+    /***** Shrubs *****/
     const shrub = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/p23az0pcb5wxqi7/", "shrub.glb", scene, function (newMeshes) {
         var shrub = newMeshes[0];
         shrub.position.x = -4;

@@ -72,7 +72,7 @@ The code below creates a mesh for the dirt within the sidewalk. Add this snippet
     mulchMat.diffuseTexture.uScale = 5.0; //Repeat 5 times on the Vertical Axes
     mulchMat.diffuseTexture.vScale = 5.0; //Repeat 5 times on the Horizontal Axes
     mulchMat.backFaceCulling = false; //Always show the front and the back of an element
-    mulch.material = dirtMat;
+    mulch.material = mulchMat;
 ```
 
 ## Complete Code
@@ -112,7 +112,7 @@ var createScene = function () {
 
     /***** Ground *****/
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 20, height: 12}, scene);
-
+    
     groundMat = new BABYLON.StandardMaterial("groundMat", scene);
     groundMat.diffuseTexture = new BABYLON.Texture("textures/grass.jpg", scene);
     groundMat.diffuseTexture.uScale = 5.0; //Repeat 5 times on the Vertical Axes

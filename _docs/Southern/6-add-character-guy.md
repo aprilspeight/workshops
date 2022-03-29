@@ -99,7 +99,7 @@ The code below adds the animations for the character. Add this snippet before th
                     }
                     else if
                         (inputMap["b"]) {
-                        //Samba!
+                        //Dance
                         danceAnim.start(true, 1.0, danceAnim.from, danceAnim.to, false);
                     }
                     else {
@@ -168,7 +168,7 @@ var createScene = function () {
     groundMat.backFaceCulling = false; //Always show the front and the back of an element
     ground.material = groundMat;
 
-    /***** Southern Sign *****/    
+    /***** Southern Sign *****/      
     const southernName = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/epdlymyvyq0rwn3/", "southern.glb", scene, function (newMeshes) {
         var southernName = newMeshes[0];
         southernName.scaling.scaleInPlace(1);
@@ -178,7 +178,7 @@ var createScene = function () {
 
     });
 
-    /***** Trees *****/   
+    /***** Trees *****/    
     const tree = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/l0ir989f1i82311/", "tree.glb", scene, function (newMeshes) {
         var tree = newMeshes[0];
         tree.scaling.scaleInPlace(10);
@@ -203,7 +203,7 @@ var createScene = function () {
         tree5.position.z = 1.5;
     });
 
-    /***** American Flag *****/   
+    /***** American Flag *****/    
     BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/h2ga135e6kbomqk/", "american-flag.glb", scene).then((result) => {
         var americanFlag = result.meshes[0];
         americanFlag.scaling = new BABYLON.Vector3(0.025, 0.025, 0.025);
@@ -222,7 +222,7 @@ var createScene = function () {
 
                 
         scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
-    }); 
+    });
 
     /***** Southern University Flag *****/   
     BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/lnkuus9x53cde72/", "southern-flag-white.glb", scene).then((result) => {
@@ -234,7 +234,6 @@ var createScene = function () {
                 
         scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
     });
-
 
     /**** Keyboard Events *****/
     var inputMap = {};
@@ -302,7 +301,7 @@ var createScene = function () {
                     }
                     else if
                         (inputMap["b"]) {
-                        //Samba!
+                        //Dance
                         danceAnim.start(true, 1.0, danceAnim.from, danceAnim.to, false);
                     }
                     else {

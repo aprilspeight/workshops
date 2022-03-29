@@ -120,7 +120,7 @@ Provided below is the complete code for this step of the workshop.
 
 ```javascript
 var createScene = function () {
-    /**** This creates a basic Babylon Scene object *****/
+    /**** Create a Basic Babylon.js Scene *****/
     var scene = new BABYLON.Scene(engine);
 
     /**** Camera *****/
@@ -156,7 +156,7 @@ var createScene = function () {
     groundMat.backFaceCulling = false; //Always show the front and the back of an element
     ground.material = groundMat;
 
-    /***** Southern Sign *****/    
+    /***** Southern Sign *****/      
     const southernName = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/epdlymyvyq0rwn3/", "southern.glb", scene, function (newMeshes) {
         var southernName = newMeshes[0];
         southernName.scaling.scaleInPlace(1);
@@ -166,7 +166,7 @@ var createScene = function () {
 
     });
 
-    /***** Trees *****/   
+    /***** Trees *****/    
     const tree = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/l0ir989f1i82311/", "tree.glb", scene, function (newMeshes) {
         var tree = newMeshes[0];
         tree.scaling.scaleInPlace(10);
@@ -191,7 +191,7 @@ var createScene = function () {
         tree5.position.z = 1.5;
     });
 
-    /***** American Flag *****/     
+    /***** American Flag *****/    
     BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/h2ga135e6kbomqk/", "american-flag.glb", scene).then((result) => {
         var americanFlag = result.meshes[0];
         americanFlag.scaling = new BABYLON.Vector3(0.025, 0.025, 0.025);
@@ -210,9 +210,9 @@ var createScene = function () {
 
                 
         scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
-    }); 
+    });
 
-    /***** Southern University Flag *****/    
+    /***** Southern University Flag *****/   
     BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/lnkuus9x53cde72/", "southern-flag-white.glb", scene).then((result) => {
         var southernFlagWhite = result.meshes[0];
         southernFlagWhite.scaling = new BABYLON.Vector3(1.08, 1.08, 1.08);

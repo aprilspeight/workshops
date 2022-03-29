@@ -1,5 +1,5 @@
 ---
-title: Add Character (Guy)
+title: Add Character (Girl)
 ---
 
 # Add Character
@@ -8,12 +8,12 @@ For this workshop, we'll use an animated character from <a href="https://www.mix
 
 - Idle
 - Walking
-- Walking Backwards
+- Backwards
 - Dance
 
 Once an animated character is loaded, the animations are mapped to keyboard inputs so that you can control the character using your **WASD** and **B** keys.
 
-Use the code snippets below to add the animated character to the landmark scene.
+Use the code snippets below to add the **Elizabeth** animated character to the landmark scene.
 
 ## Keyboard Events
 
@@ -164,7 +164,7 @@ var createScene = function () {
 
     /***** Ground *****/
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 20, height: 12}, scene);
-
+    
     groundMat = new BABYLON.StandardMaterial("groundMat", scene);
     groundMat.diffuseTexture = new BABYLON.Texture("textures/grass.jpg", scene);
     groundMat.diffuseTexture.uScale = 5.0; //Repeat 5 times on the Vertical Axes
@@ -220,6 +220,7 @@ var createScene = function () {
         scene.beginAnimation(result.skeletons[0], 0, 100, true, 1.0);
      });
 
+    /***** Shrubs *****/
     const shrub = BABYLON.SceneLoader.ImportMesh("", "https://dl.dropbox.com/s/p23az0pcb5wxqi7/", "shrub.glb", scene, function (newMeshes) {
         var shrub = newMeshes[0];
         shrub.position.x = -4;
@@ -297,7 +298,6 @@ var createScene = function () {
     }));
 
     /**** Animated Character *****/
-
     BABYLON.SceneLoader.ImportMeshAsync("", "https://dl.dropbox.com/s/ycwztvffb1u0lg1/", "elizabeth.glb", scene).then((result) => {
         var character = result.meshes[0];
 
