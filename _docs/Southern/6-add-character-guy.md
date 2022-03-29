@@ -2,7 +2,7 @@
 title: Add Character (Guy)
 ---
 
-# Add Character
+# Add Character (Guy)
 
 For this workshop, we'll use an animated character from <a href="https://www.mixamo.com/">Mixamo</a>. You can leverage Mixamo's pre-made characters and animations for your Babylon.js scenes. The character we'll use has the following animations:
 
