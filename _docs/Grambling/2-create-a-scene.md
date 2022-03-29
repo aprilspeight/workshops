@@ -8,9 +8,7 @@ Whether you are creating a whole world or just placing one model into a web page
 
 Use the code snippets below to create the scene for the landmark.
 
-## Code Snippets
-
-### Basic Scene Syntax
+## Basic Scene Syntax
 
 The code below reflects the basic syntax needed to create a Babylon.js scene.
 
@@ -23,7 +21,7 @@ var createScene = function () {
 };
 ```
 
-### Camera
+## Camera
 
 The code below creates an Arc Rotate Camera for the scene.
 
@@ -37,7 +35,7 @@ The code below creates an Arc Rotate Camera for the scene.
     camera.wheelDeltaPercentage = 0.01;
 ```
 
-### Light
+## Light
 
 The code below creates a hemispheric light for the scene.
 
@@ -46,7 +44,7 @@ The code below creates a hemispheric light for the scene.
     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, -1), scene);
 ```
 
-### Ground
+## Ground
 
 The code below creates a ground for the scene.
 

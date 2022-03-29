@@ -17,9 +17,7 @@ Once the assets are loaded, use the `position` property to place the asset at yo
 
 Use the code snippets below to load external assets for the landmark scene.
 
-## Code Snippets
-
-### Southern Sign
+## Southern Sign
 
 The code below loads the Southern sign. Add this snippet after the code for the **Ground**.
 
@@ -35,7 +33,7 @@ The code below loads the Southern sign. Add this snippet after the code for the 
     });
 ```
 
-### Trees
+## Trees
 
 The code below loads trees. Add this snippet after the code for the **Southern Sign**.
 
@@ -70,7 +68,7 @@ The code below creates clones for the tree. Add this snippet within the snippet 
         tree5.position.z = 1.5;
 ```
 
-### Flags
+## Flags
 
 The code below loads the American flag. Add this snippet after the code for the **Trees**.
 

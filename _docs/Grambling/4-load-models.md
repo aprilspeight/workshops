@@ -17,9 +17,7 @@ Once the assets are loaded, use the `position` property to place the asset at yo
 
 Use the code snippets below to load external assets for the landmark scene.
 
-## Code Snippets
-
-### Grambling State University Structure
+## Grambling State University Structure
 
 The code below loads the brick structure. Add this snippet after the code for the **Mulch**.
 
@@ -35,7 +33,7 @@ The code below loads the brick structure. Add this snippet after the code for th
     });
 ```
 
-### Tiger
+## Tiger
 
 The code below loads an animated tiger. Add this snippet after the code for the **Structure**.
 
@@ -50,7 +48,7 @@ The code below loads an animated tiger. Add this snippet after the code for the 
     });
 ```
 
-### American Flag
+## American Flag
 
 The code below loads an American flag. Add this snippet after the code for the **Tiger**.
 
@@ -66,7 +64,7 @@ The code below loads an American flag. Add this snippet after the code for the *
      });
 ```
 
-### Shrubs
+## Shrubs
 
 The code below loads a shrub. Add this snippet after the code for the **American Flag**.
 

@@ -15,9 +15,7 @@ Once an animated character is loaded, the animations are mapped to keyboard inpu
 
 Use the code snippets below to add the animated character to the landmark scene.
 
-## Code Snippets
-
-### Keyboard Events
+## Keyboard Events
 
 The code below enables keyboard input. Add this snippet after the code for the **Shrubs**.
 
@@ -33,7 +31,7 @@ The code below enables keyboard input. Add this snippet after the code for the *
     }));
 ```
 
-### Import Character
+## Import Character
 
 The code below imports the 3D model for the character. Add this snippet after the code for the **Keyboard Events**.
 
@@ -65,7 +63,7 @@ The code below imports the 3D model for the character. Add this snippet after th
     })
 ```
 
-### Animations
+## Animations
 
 The code below adds the animations for the character. Add this snippet before the final `})`.
 

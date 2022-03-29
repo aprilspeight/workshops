@@ -8,9 +8,7 @@ Materials give your meshes color and texture. One material in Babylon.js can be 
 
 Use the code snippets below to create a material and texture for the sky and ground within the scene.
 
-## Code Snippets
-
-### Sky
+## Sky
 
 The code below creates a skybox for the scene. Add this snippet after the code for the **Light**.
 
@@ -33,7 +31,7 @@ The code below creates a sky material. Add this snippet after the code for the *
     skyboxMaterial.luminance = 1;
 ```
 
-### Ground Material & Texture
+## Ground Material & Texture
 
 The code below creates a material and texture for the ground. Add this snippet after the code for the **Ground**.
 

@@ -20,10 +20,10 @@ The space for the coding editor and rendering area can be adjusted by dragging t
 1. Navigate to <a href="https://playground.babylonjs.com">https://playground.babylonjs.com</a>.
 1. Verify that the chosen language is **JavaScript**.
 
-    ![A screenshot of the Babylon.js Playground. The JavaScript tab is highlighted.](assets\img\playground-save.jpg)
+    ![A screenshot of the Babylon.js Playground. The JavaScript tab is highlighted.]({{ site.baseurl }}/assets/img/playground-language.jpg)
 
 1. **Save** the playground and name it **workshop**.
 
-    ![A screenshot of the Babylon.js Playground. The save icon and title field are highlighted.](assets\img\playground-save.jpg)
+    ![A screenshot of the Babylon.js Playground. The save icon and title field are highlighted.]({{ site.baseurl }}/assets/img/playground-save.jpg)
 
 1. Copy the link in the address bar and save it to reference later.
